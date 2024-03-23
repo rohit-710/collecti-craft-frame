@@ -6,11 +6,11 @@ const NEXT_PUBLIC_URL = process.env.NEXT_PUBLIC_URL;
 const frameMetadata = getFrameMetadata({
   buttons: [
     {
-      label: "Mint to an email address",
+      label: "Mint",
       action: "post",
     },
     {
-      label: "Mint with Credit Card",
+      label: "Credit Card Mint",
       action: "link",
       target:
         "https://staging.crossmint.com/collections/dynamic-nft-frame/drop",

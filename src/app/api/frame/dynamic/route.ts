@@ -93,20 +93,14 @@ export async function POST(req: NextRequest): Promise<Response> {
     return new NextResponse(
       getFrameHtmlResponse({
         image: {
-          src: `${NEXT_PUBLIC_URL}/success.png`,
+          src: `${NEXT_PUBLIC_URL}/update.png`,
         },
         buttons: [
-          isEmail
-            ? {
-                label:
-                  "Your NFT will be delivered to your Email wallet address soon!",
-                action: "link",
-                target: `https://${env}.crossmint.com/user/collection`,
-              }
-            : {
-                label:
-                  "Your NFT will be delivered to your connected EVM wallet soon!",
-              },
+          {
+            label: "Your NFT image will be updated soon!",
+            action: "link",
+            target: `https://${env}.crossmint.com/user/collection`,
+          },
         ],
       })
     );
