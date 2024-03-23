@@ -14,6 +14,10 @@ export async function handler(req: NextRequest): Promise<Response> {
   const body: FrameRequest = await req.json();
   const env = process.env.CROSSMINT_ENV || "staging";
 
+  if (req.method !== "POST" && req.method !== "PUT") {
+    return new NextResponse("Method Not Allowed", { status: 405 });
+  }
+
   try {
     const { message } = await getFrameMessage(body);
 
