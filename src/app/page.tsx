@@ -8,6 +8,7 @@ const frameMetadata = getFrameMetadata({
     {
       action: "post",
       label: "Mint to an email address",
+      target: "${NEXT_PUBLIC_URL}/api/frame/mint",
     },
     {
       action: "link",
