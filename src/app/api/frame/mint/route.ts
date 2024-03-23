@@ -6,17 +6,13 @@ import {
 import { getFarcasterUserAddress } from "@coinbase/onchainkit/farcaster";
 import { NextRequest, NextResponse } from "next/server";
 
-export default async function (req: NextRequest): Promise<Response> {
+export async function POST(req: NextRequest): Promise<Response> {
   let input: string | undefined = "";
   let recipientAddress = "";
   let isEmail = false;
   const NEXT_PUBLIC_URL = process.env.NEXT_PUBLIC_URL;
   const body: FrameRequest = await req.json();
   const env = process.env.CROSSMINT_ENV || "staging";
-
-  if (req.method !== "POST" && req.method !== "PUT") {
-    return new NextResponse("Method Not Allowed", { status: 405 });
-  }
 
   try {
     const { message } = await getFrameMessage(body);
