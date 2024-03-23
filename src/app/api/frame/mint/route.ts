@@ -61,9 +61,9 @@ export async function POST(req: NextRequest): Promise<Response> {
     //recipientAddress = `astar-zkevm:${input}`;
 
     const idempotencyKey = input;
-    const crossmintURL = `https://${env}.crossmint.com/api/2022-06-09/collections/${process.env.CROSSMINT_COLLECTION_ID}/nfts/${idempotencyKey}`;
+    const crossmintURL = `https://${env}.crossmint.com/api/2022-06-09/collections/${process.env.CROSSMINT_COLLECTION_ID}/nfts`;
     const crossmintOptions = {
-      method: "PUT",
+      method: "POST",
       headers: {
         accept: "application/json",
         "content-type": "application/json",
