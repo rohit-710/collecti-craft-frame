@@ -15,6 +15,11 @@ const frameMetadata = getFrameMetadata({
       target:
         "https://staging.crossmint.com/collections/dynamic-nft-frame/drop",
     },
+    {
+      label: "Update NFT",
+      action: "post",
+      target: `${NEXT_PUBLIC_URL}/api/frame/dynamic`,
+    },
   ],
   image: {
     src: `${NEXT_PUBLIC_URL}/default.png`,
