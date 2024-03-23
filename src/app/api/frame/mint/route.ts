@@ -32,8 +32,9 @@ export async function POST(req: NextRequest): Promise<Response> {
         })
       );
     }*/
-    if (message?.input && input.includes("@")) {
+    if (message?.input) {
       input = message.input;
+    } else if (input.includes("@")) {
       recipientAddress = `email:${input}:base`;
       isEmail = true;
     }
