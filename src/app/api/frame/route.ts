@@ -17,7 +17,11 @@ export async function POST(req: NextRequest): Promise<Response> {
   try {
     const { message } = await getFrameMessage(body);
 
-    /*if (message.liked === false || message.recasted === false) {
+    if (!message) {
+      throw new Error("Message not defined");
+    }
+
+    if (message.liked === false || message.recasted === false) {
       return new NextResponse(
         getFrameHtmlResponse({
           image: {
@@ -31,7 +35,8 @@ export async function POST(req: NextRequest): Promise<Response> {
           ],
         })
       );
-    }*/
+    }
+
     if (message?.input) {
       input = message.input;
     }
@@ -60,9 +65,9 @@ export async function POST(req: NextRequest): Promise<Response> {
     //recipientAddress = `astar-zkevm:${input}`;
 
     const idempotencyKey = input;
-    const crossmintURL = `https://${env}.crossmint.com/api/2022-06-09/collections/${process.env.CROSSMINT_COLLECTION_ID}/nfts`;
+    const crossmintURL = `https://${env}.crossmint.com/api/2022-06-09/collections/${process.env.CROSSMINT_COLLECTION_ID}/nfts/${idempotencyKey}`;
     const crossmintOptions = {
-      method: "POST",
+      method: "PUT",
       headers: {
         accept: "application/json",
         "content-type": "application/json",
