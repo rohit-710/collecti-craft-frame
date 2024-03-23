@@ -77,7 +77,6 @@ export async function POST(req: NextRequest): Promise<Response> {
           description:
             "This is an NFT that was minted on Base from a Warpcast Frame using Crossmint",
         },
-        reuploadLinkedFiles: true,
       }),
     };
 
