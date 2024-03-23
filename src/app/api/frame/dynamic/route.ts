@@ -65,10 +65,10 @@ export async function POST(req: NextRequest): Promise<Response> {
 
     //recipientAddress = `astar-zkevm:${input}`;
 
-    const image = randomInt(1, 6);
+    let image = randomInt(1, 6);
 
     const idempotencyKey = input;
-    const crossmintURL = `https://${env}.crossmint.com/api/2022-06-09/collections/${process.env.CROSSMINT_COLLECTION_ID}/nfts/${idempotencyKey}`;
+    const crossmintURL = `https://${env}.crossmint.com/api/2022-06-09/collections/${process.env.CROSSMINT_COLLECTION_ID}/nfts/${input}`;
     const crossmintOptions = {
       method: "PATCH",
       headers: {
