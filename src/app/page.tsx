@@ -23,7 +23,7 @@ const frameMetadata = getFrameMetadata({
   input: {
     text: "Enter your Email Address",
   },
-  postUrl: `${NEXT_PUBLIC_URL}/api/frame/mint`,
+  postUrl: `${NEXT_PUBLIC_URL}/api/frame`,
 });
 
 export const metadata: Metadata = {
