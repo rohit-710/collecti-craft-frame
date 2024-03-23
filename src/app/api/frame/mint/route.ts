@@ -17,10 +17,6 @@ export async function POST(req: NextRequest): Promise<Response> {
   try {
     const { message } = await getFrameMessage(body);
 
-    if (!message) {
-      throw new Error("Message not defined");
-    }
-
     /*if (message.liked === false || message.recasted === false) {
       return new NextResponse(
         getFrameHtmlResponse({
