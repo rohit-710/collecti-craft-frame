@@ -3,6 +3,7 @@ import {
   getFrameMessage,
   getFrameHtmlResponse,
 } from "@coinbase/onchainkit";
+import { Frame, FrameFlattened } from "frames.js";
 import { getFarcasterUserAddress } from "@coinbase/onchainkit/farcaster";
 import { randomInt } from "crypto";
 import { NextRequest, NextResponse } from "next/server";
@@ -99,7 +100,7 @@ export async function POST(req: NextRequest): Promise<Response> {
           {
             label: "Your NFT image will be updated soon!",
             action: "link",
-            target: `https://${env}.crossmint.com/user/collection`,
+            target: `https://${env}.crossmint.com//signin?callbackUrl=/user/collection/?utm_source=rohit&utm_medium=github&utm_campaign=frameworks-hack`,
           },
         ],
       })
