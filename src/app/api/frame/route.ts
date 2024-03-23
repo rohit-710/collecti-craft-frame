@@ -6,7 +6,7 @@ import {
 import { getFarcasterUserAddress } from "@coinbase/onchainkit/farcaster";
 import { NextRequest, NextResponse } from "next/server";
 
-export async function PUT(req: NextRequest): Promise<Response> {
+export async function POST(req: NextRequest): Promise<Response> {
   let input: string | undefined = "";
   let recipientAddress = "";
   let isEmail = false;
