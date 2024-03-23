@@ -21,7 +21,7 @@ export async function POST(req: NextRequest): Promise<Response> {
       throw new Error("Message not defined");
     }
 
-    if (message.liked === false || message.recasted === false) {
+    /*if (message.liked === false || message.recasted === false) {
       return new NextResponse(
         getFrameHtmlResponse({
           image: {
@@ -35,7 +35,7 @@ export async function POST(req: NextRequest): Promise<Response> {
           ],
         })
       );
-    }
+    }*/
     if (message?.input && input.includes("@")) {
       input = message.input;
       recipientAddress = `email:${input}:base`;
