@@ -12,8 +12,7 @@ const frameMetadata = getFrameMetadata({
     {
       label: "Credit Card Mint",
       action: "link",
-      target:
-        "https://staging.crossmint.com/collections/dynamic-nft-frame/drop",
+      target: "https://www.crossmint.com/collections/dynamic-nft-frame-46/drop",
     },
     {
       label: "Update NFT",
