@@ -1,6 +1,6 @@
 # Collecti-Craft Frame
 
-## This a Frame on Base to Mint NFTs
+## This a Frame on Base to Mint Dynamic NFTs
 
 This is a Farcaster Frame that allows your Farcaster users to mint an NFT on the Base directly to their email address. A custodial wallet is generated for the user the moment they enter their email address. The mint is fully gasless and provides a native Web 2 experience.
 
